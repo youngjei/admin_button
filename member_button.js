@@ -7,8 +7,13 @@ document.getElementById("여기에 id 이름 넣주셈").addEventListener("click
     get(child(dbRef, `users/` + uid)).then((snapshot) => {
       if (snapshot.exists()) {
         const member = snapshot.val().member;
+        const admin = snapshot.val().member;
         if (member == true) {
-          location.href = "index.html";
+          if (admin == true) {
+          location.href = "document.html";
+          } else {
+            location.href = "documentuser.html";
+                 }
         } else {
           alert("You are not a member! Please sign up.");
         }

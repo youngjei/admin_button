@@ -7,7 +7,7 @@ document.getElementById("여기에 id 이름 넣주셈").addEventListener("click
     get(child(dbRef, `users/` + uid)).then((snapshot) => {
       if (snapshot.exists()) {
         const member = snapshot.val().member;
-        const admin = snapshot.val().member;
+        const admin = snapshot.val().admin;
         if (member == true) {
           if (admin == true) {
           location.href = "document.html";
